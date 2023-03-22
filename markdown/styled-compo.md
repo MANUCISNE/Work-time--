@@ -1,16 +1,16 @@
-## STYLED COMPONENTS 
+# STYLED COMPONENTS
 
 1- npm i styled-components
 2- para typescript precisa instalar as tipagens em desenvolvimento (npm i @types/styled-components -D)
 3- usar a extensão do styled-components dentro do VScode (verificar se estar ativa)
 
-* Observações 
+* Observações
 
-- com o styled components consigo inserir propriedades/funções dentro dos componentes, ou seja, estilizações que são baseadas nas informações que estão dentro das propriedades.
+-com o styled components consigo inserir propriedades/funções dentro dos componentes, ou seja, estilizações que são baseadas nas informações que estão dentro das propriedades.
 
-- o arquivo styles será com *.ts* se estiver usando typescript e *.js* se estiver usando javascript; não precisa ser *.tsx* ou *.jsx* pois dentro desse arquivo não terá nenhum componente, não terá nenhuma sintaxe HTML - return.
+-o arquivo styles será com *.ts* se estiver usando typescript e *.js* se estiver usando javascript; não precisa ser *.tsx* ou *.jsx* pois dentro desse arquivo não terá nenhum componente, não terá nenhuma sintaxe HTML - return.
 
-- arquivo styles.ts comentado:
+-arquivo styles.ts comentado:
 
 ```tsx
   //fazer a importação da biblioteca
@@ -39,7 +39,8 @@
     }}
   `
 ```
-- arquivo styles.ts sem comentários:
+
+-arquivo styles.ts sem comentários:
 
   ```tsx
   import styled from 'styled-components';
@@ -49,4 +50,5 @@
     height: 40px;
   `
   ```
+
 * logo após configurar o arquivo styles.ts trocar no arquivo de componentes Button.tsx a tag <button> para <ButtonContainer />
