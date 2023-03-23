@@ -51,7 +51,13 @@ export function CyclesContextProvider({
       if (action.type === 'INTERRUPT_CURRENT_CYCLE') {
         return {
           ...state,
-          cycles: [],
+          cycles: state.cycles.map((cycle) => {
+            if (cycle.id === state.activeCycleId) {
+              return { ...cycle, interruptedDate: new Date() }
+            } else {
+              return cycle
+            }
+          }),
           activeCycleId: null,
         }
       }
@@ -109,8 +115,6 @@ export function CyclesContextProvider({
         newCycle,
       },
     })
-    // setCycles((state) => [...state, newCycle])
-    setAmountSecondsPassed(0)
   }
 
   function interruptCurrentCycle() {
@@ -120,16 +124,6 @@ export function CyclesContextProvider({
         activeCycleId,
       },
     })
-
-    // setCycles((state) =>
-    // state.map((cycle) => {
-    // if (cycle.id === activeCycleId) {
-    // return { ...cycle, interruptedDate: new Date() }
-    // } else {
-    // return cycle
-    // }
-    // }),
-    // )
   }
 
   return (
